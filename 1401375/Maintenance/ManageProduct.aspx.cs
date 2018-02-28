@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -15,6 +16,11 @@ namespace _1401375
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
+        {
+            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
 
         protected void getAntiMalwareSoftware(object sender, EventArgs e)

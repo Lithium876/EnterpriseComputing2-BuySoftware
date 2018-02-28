@@ -22,15 +22,50 @@
             <div class="wrap">
                 <div class="header_top">
                     <div class="logo">
-                        <a href="#">
-                            <img src="Content/images/logo.png" />
+                        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Default.aspx" runat="server">
+                           <img src="images/logo.png" /></asp:HyperLink>
                     </div>
                     <div class="header_top_right">
-                        <asp:HyperLink ID="hlManageProduct" NavigateUrl="~/Default.aspx" runat="server">Home</asp:HyperLink>
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <AnonymousTemplate runat="server">
+                                <a runat="server" href="~/Account/Login">Log in</a>&nbsp;&nbsp;&nbsp;
+                                <a runat="server" href="~/Account/Register">Register</a>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <a runat="server" href="~/Account/Manage" title="Manage your account">Welcome
+                                    <asp:LoginName ID="LoginName1" runat="server" />
+                                </a>&nbsp;&nbsp;&nbsp;
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                            </LoggedInTemplate>
+                        </asp:LoginView>
                     </div>
+
                     <div class="clear"></div>
                 </div>
+                <div class="navigation">
+                    <a class="toggleMenu" href="#">Menu</a>
+                    <ul class="nav">
+                        <li>
+                            <asp:HyperLink ID="hlHome" NavigateUrl="~/Default.aspx" runat="server">Home</asp:HyperLink>
+                        </li>
+                        <li class="test">
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a runat="server" href="~/Maintenance/ManageProduct.aspx" id="isAdmin">Manage Product</a>
+                        </li>
+                        <li>
+                            <a runat="server" href="~/Maintenance/Default.aspx" id="isAdmin1">Manage Roles</a>
+                        </li>
+                    </ul>
+                    <span class="left-ribbon"></span>
+                    <span class="right-ribbon"></span>
+                </div>
             </div>
+            <br />
         </div>
         <%----------%>
 
@@ -92,7 +127,7 @@
                 <div class="contact-form">
                     <h3 style="width: 1150px;" class="_header">Browse Software
                         <asp:Label ID="Label1" runat="server"></asp:Label>
-                         <asp:Label ID="_pageHeader" runat="server">Anti-Malware Software</asp:Label>
+                        <asp:Label ID="_pageHeader" runat="server">Anti-Malware Software</asp:Label>
                     </h3>
                     <asp:ListView ID="lvManageProducts" runat="server" DataSourceID="odsSoftware" InsertItemPosition="LastItem" DataKeyNames="SoftwareID">
                         <AlternatingItemTemplate>
