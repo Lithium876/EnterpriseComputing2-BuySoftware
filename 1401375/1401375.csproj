@@ -198,7 +198,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="CheckOut.aspx" />
+    <Content Include="Auth_Customer\CheckOut.aspx" />
+    <Content Include="Auth_Customer\images\logo.png" />
+    <Content Include="Auth_Customer\images\thanks.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="images\left-fold.png" />
@@ -213,7 +215,7 @@
     <Content Include="Content\style.css" />
     <Content Include="CreateRole.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Display.aspx" />
+    <Content Include="Auth_Customer\Display.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -222,9 +224,23 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Maintenance\content\bootstrap.css" />
+    <Content Include="Maintenance\content\bootstrap.min.css" />
+    <Content Include="Maintenance\content\images\logo.png" />
+    <Content Include="Maintenance\images\logo.png" />
+    <Content Include="Maintenance\content\Scripts\bootstrap.js" />
+    <Content Include="Maintenance\content\Scripts\bootstrap.min.js" />
+    <Content Include="Maintenance\content\Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Maintenance\content\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Maintenance\content\Scripts\respond.js" />
+    <Content Include="Maintenance\content\Scripts\respond.min.js" />
+    <Content Include="Maintenance\content\Site.css" />
+    <Content Include="Maintenance\content\style.css" />
+    <Content Include="Maintenance\Web.config" />
+    <Content Include="Auth_Customer\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Maintenance\Default.aspx" />
-    <Content Include="ManageProduct.aspx" />
+    <Content Include="Maintenance\ManageProduct.aspx" />
     <Content Include="ProductPage.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -385,11 +401,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="CheckOut.aspx.cs">
+    <Compile Include="Auth_Customer\CheckOut.aspx.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CheckOut.aspx.designer.cs">
+    <Compile Include="Auth_Customer\CheckOut.aspx.designer.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateRole.aspx.cs">
@@ -406,11 +422,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Display.aspx.cs">
+    <Compile Include="Auth_Customer\Display.aspx.cs">
       <DependentUpon>Display.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Display.aspx.designer.cs">
+    <Compile Include="Auth_Customer\Display.aspx.designer.cs">
       <DependentUpon>Display.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -423,11 +439,11 @@
     <Compile Include="Maintenance\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageProduct.aspx.cs">
+    <Compile Include="Maintenance\ManageProduct.aspx.cs">
       <DependentUpon>ManageProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageProduct.aspx.designer.cs">
+    <Compile Include="Maintenance\ManageProduct.aspx.designer.cs">
       <DependentUpon>ManageProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\BusinessClass.cs" />

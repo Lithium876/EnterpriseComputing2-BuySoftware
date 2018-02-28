@@ -37,7 +37,7 @@ public class BusinessClass
             cmd.Parameters.AddWithValue("@softwareDescription", SoftwareDescription);
 
             //Convert Default Image to Bytes
-            Image image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"./Content/images/no-image.png"));
+            Image image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"images/no-image.png"));
             MemoryStream ms = new MemoryStream();
             image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             byte[] bytes = ms.ToArray();

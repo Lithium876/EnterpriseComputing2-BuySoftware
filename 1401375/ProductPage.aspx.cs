@@ -27,7 +27,7 @@ namespace _1401375
             software.SoftwareCost = cost.Text;
 
             Session["Software"] = software;
-            Response.Redirect("CheckOut.aspx");
+            Response.Redirect("Auth_Customer/CheckOut.aspx");
         }
     }
 }

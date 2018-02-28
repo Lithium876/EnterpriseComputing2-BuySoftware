@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,11 @@ namespace _1401375
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.User.IsInRole("admin"))
+            {
+                isAdmin.Visible = false;
+                isAdmin1.Visible = false;
+            }
         }
 
         protected void getAntiMalwareSoftware(object sender, EventArgs e)
@@ -94,5 +99,9 @@ namespace _1401375
             Response.Redirect("ProductPage.aspx");
         }
 
+        protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
+        {
+            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+        }
     }
 }

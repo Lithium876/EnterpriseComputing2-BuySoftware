@@ -10,6 +10,9 @@
     <script src="Scripts/jquery-1.9.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="Scripts/respond.js"></script>
+    <script src="Scripts/respond.min.js"></script>
 </head>
 <body>
     <form id="fmain" runat="server">
@@ -22,8 +25,20 @@
                     </div>
                     <div class="header_top_right">
                         <%--<asp:HyperLink ID="hlManageProduct" NavigateUrl="~/ManageProduct.aspx" runat="server">Manage Products</asp:HyperLink>--%>
-                        <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Account/Login.aspx" runat="server">Login</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Account/Register.aspx" runat="server">Register</asp:HyperLink>
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <AnonymousTemplate runat="server">
+                                <a runat="server" href="~/Account/Login">Log in</a>&nbsp;&nbsp;&nbsp;
+                                <a runat="server" href="~/Account/Register">Register</a>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <a runat="server" href="~/Account/Manage" title="Manage your account">Welcome <asp:LoginName ID="LoginName1" runat="server" /></a>&nbsp;&nbsp;&nbsp;
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+
+
+                        <%--<asp:HyperLink ID="HyperLink2" NavigateUrl="~/Account/Login.aspx" runat="server">Login</asp:HyperLink>--%>
+                        <%--<asp:HyperLink ID="HyperLink3" NavigateUrl="~/Account/Register.aspx" runat="server">Register</asp:HyperLink>--%>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -39,6 +54,12 @@
                         <li>
                             <a href="#">Contact Us</a>
                         </li>
+                         <li>
+                            <a runat="server" href="Maintenance/ManageProduct.aspx" id="isAdmin">Manage Product</a>
+                        </li>
+                        <li>
+                            <a runat="server" href="Maintenance/Default.aspx" id="isAdmin1">Manage Roles</a>
+                        </li>
                     </ul>
                     <span class="left-ribbon"></span>
                     <span class="right-ribbon"></span>
@@ -49,7 +70,8 @@
                                             <br />
                             OF THE BEST SOFTWARE</h2>
                         <p>
-                            &nbsp;</p>
+                            &nbsp;
+                        </p>
                         <p>
                             &#10004; Hand picked software titles - only the best!<br />
                             &#10004; Tested for malware, adware and viruses

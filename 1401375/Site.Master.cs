@@ -69,7 +69,11 @@ namespace _1401375
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.User.IsInRole("admin"))
+            {
+                isAdmin.Visible = false;
+                isAdmin1.Visible = false;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
