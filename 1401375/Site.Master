@@ -5,9 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <script src="Scripts/jquery-1.9.0.min.js"></script>
     <link href="Content/style.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="Scripts/respond.js"></script>
+    <script src="Scripts/respond.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -27,7 +32,9 @@
                                 <a runat="server" href="~/Account/Register">Register</a>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
-                                <a runat="server" href="~/Account/Manage" title="Manage your account">Welcome <asp:LoginName ID="LoginName1" runat="server" /></a>&nbsp;&nbsp;&nbsp;
+                                <a runat="server" href="~/Account/Manage" title="Manage your account">Welcome
+                                    <asp:LoginName ID="LoginName1" runat="server" />
+                                </a>&nbsp;&nbsp;&nbsp;
                                 <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                             </LoggedInTemplate>
                         </asp:LoginView>
@@ -57,12 +64,19 @@
                     <span class="left-ribbon"></span>
                     <span class="right-ribbon"></span>
                 </div>
-            </div><br />
+            </div>
+            <br />
         </div>
 
         <div style="margin-top: 20px">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+            <div class="content">
+                <div class="content_bottom">
+                    <div class="wrap">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
             <div class="footer">
                 <div class="wrap">
                     <div class="copy_right">
@@ -79,7 +93,6 @@
                 </div>
             </div>
         </div>
-
     </form>
 </body>
 </html>

@@ -26,6 +26,10 @@ namespace _1401375.Account
                 //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
 
                 signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+
+                //assign user to role
+                manager.AddToRole(user.Id, "customer");
+
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else 
