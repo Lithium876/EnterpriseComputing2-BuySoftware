@@ -1,3 +1,5 @@
+![prject grade](https://img.shields.io/badge/Project%20Grade-100%25-brightgreen.svg)
+
 # Enterprise Computing 2 - First Project : Buy Software
 
 ## Application requirements:
